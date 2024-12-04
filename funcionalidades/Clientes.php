@@ -164,7 +164,7 @@
                     <i data-feather="settings" aria-hidden="true"></i>
                     <span>Account settings</span>
                   </a></li>
-                <li><a class="danger" href="##">
+                <li><a class="danger" href="log-out.php">
                     <i data-feather="log-out" aria-hidden="true"></i>
                     <span>Log out</span>
                   </a></li>
@@ -260,8 +260,3 @@
 </body>
 
 </html>
-
-<?php
-  session_destroy();
-  session_commit();
-?>

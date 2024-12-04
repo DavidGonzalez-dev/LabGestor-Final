@@ -1,8 +1,5 @@
 <?php
     session_start();
-
     if (!isset($_SESSION["id_usuario"])){
-      header("Location: signin.php");
-    
+      header(header: "Location: signin.php");
     }
-?>

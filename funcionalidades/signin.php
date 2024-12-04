@@ -43,28 +43,30 @@
 
 <?php
 error_reporting(0);
+// Se importa la conexion a la base de datos
 require "Programas/conexionDB.php";
 
+// Se obtienen los valores ingresados con el usuarios
 $correo = $_POST["correo"];
 $password = $_POST["password"];
 
+
+// Se hace la consulta a la base de datos para traer la informacion del usuario
 $sql = "select nombre_usuario, contraseña_usuario, id_usuario from usuarios where nombre_usuario='$correo'";
 $result = mysqli_query($conexion, $sql);
-$usuario = mysqli_fetch_assoc($result);
 
-if (isset($usuario)) {
-  header("Location: dashboard.php");
-  echo '<script>
-          alert("Has ingresado con exito");
-          </script>';
-  session_start();
-  $_SESSION["id_usuario"] = $usuario["id_usuario"];
-  $_SESSION["session_id"] = session_id();
-} else {
-  echo "<script>
-      alert('Por favor ingrese un usuario o contraseña validos');
-      </script>";
-}
 
+// Se verifica que el usuario exista
+if ($usuario = mysqli_fetch_assoc($result)) {
+
+  // Se verifica que la contraseña del usuario coincida con la registrada en la base de datos
+  //if (password_verify($password, $usuario["password"])) {
+    // Se inicia la sesion del usuario
+    session_start();
+    $_SESSION["id_usuario"] = $usuario["id_usuario"];
+    $_SESSION["session_id"] = session_id();
+    header("Location: dashboard.php");
+  }
+//}
 
 ?>
