@@ -10,7 +10,7 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci; -->
 <?php
 include "../conexionDB.php";
-$query = 'select * from controles_negativos_medios where numero_registro_producto="asd"';
+$query = 'select * from controles_negativos_medios where numero_registro_producto="A12345"';
 $vistaCNM = mysqli_query($conexion, $query);
 $info = mysqli_fetch_all($vistaCNM);
 ?>

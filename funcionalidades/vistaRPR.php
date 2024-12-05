@@ -14,7 +14,7 @@
  -->
  <?php
 include "../conexionDB.php";
-$query = 'select * from pruebas_recuento where numero_registro_producto="qwe"';
+$query = 'select * from pruebas_recuento where numero_registro_producto="A12345"';
 $vistaRPR = mysqli_query($conexion, $query);
 $info = mysqli_fetch_all($vistaRPR);
 ?>
@@ -218,6 +218,7 @@ $info = mysqli_fetch_all($vistaRPR);
                                 <td><?= $data[6]?></td>
                                 <td><?= $data[7]?></td>
                                 <td><?= $data[8]?></td>
+                                <td><?= $data[9]?></td>
                             </tr>
                         <?php endforeach?>
                         </tbody>

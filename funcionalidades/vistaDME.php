@@ -15,7 +15,7 @@
 
 <?php
 include "../conexionDB.php";
-$query = 'select * from deteccion_microorganismos where numero_registro_producto="fgh"';
+$query = 'select * from deteccion_microorganismos where numero_registro_producto="A12345"';
 $vistaDME = mysqli_query($conexion, $query);
 $info = mysqli_fetch_all($vistaDME);
 ?>
@@ -26,7 +26,7 @@ $info = mysqli_fetch_all($vistaDME);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista Registro Pruebas de Recuento</title>
+    <title>Vista Registro Deteccion de Microorganismos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
 
